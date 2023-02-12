@@ -1,16 +1,14 @@
-export const App = () => {
+import React, { useState } from 'react';
+import { FeedBackList } from './feedback/FeedBack/FeedBack';
+
+export function App() {
+  const [good] = useState(0);
+  const [neutral] = useState(0);
+  const [bad] = useState(0);
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <FeedBackList g={good} n={neutral} b={bad} />
     </div>
   );
-};
+}
