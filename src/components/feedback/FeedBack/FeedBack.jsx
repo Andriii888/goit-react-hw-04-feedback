@@ -10,7 +10,6 @@ export function FeedBackList({ g, n, b }) {
   const [good, setGood] = useState(g);
   const [neutral, setNeutral] = useState(n);
   const [bad, setBad] = useState(b);
-  const [array] = useState({ good, neutral, bad });
 
   const onLeaveFeedbacks = e => {
     const dataName = e.currentTarget.value;
@@ -45,7 +44,7 @@ export function FeedBackList({ g, n, b }) {
   };
 
   const oneFeedback = countTotalFeedback() <= 0;
-  const options = Object.keys(array);
+  const options = Object.keys({ good, neutral, bad });
 
   return (
     <FeedBackStyle>
